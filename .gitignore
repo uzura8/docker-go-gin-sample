@@ -1,0 +1,58 @@
+# OS file
+*~
+.DS_Store
+Thumbs.db
+
+# temp files for editor
+*.swp
+*.swo
+*.swn
+*.bak
+*.orig
+*.tmp
+
+# IDE user config
+.vscode/
+.idea/
+.vs/
+.buildpath
+.project
+.settings
+desktop.ini
+nbproject/
+*.iml
+*.suo
+*.sln
+*.user
+*.userosscache
+*.cache
+*.svclog
+*.dbmdl
+*.jfm
+*.tmproj
+tags
+
+# Build files
+*.exe
+*.out
+*.o
+*.so
+*.dll
+*.a
+
+# For Go build results
+bin/
+tmp/
+vendor/
+!vendor/*.yaml
+!vendor/*.json
+!vendor/*.toml
+!vendor/*.lock
+
+# Go module cache
+*.mod
+*.sum
+go.sum
+go.mod
+Gopkg.toml
+Gopkg.lock

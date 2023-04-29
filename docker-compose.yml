@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: app_gin
+    build:
+      context: .
+      dockerfile: ./infra/app/Dockerfile # Dockerfile のあるディレクトリを相対パスで指定
+    tty: true # コンテナが落ちないようにする
+    volumes:
+      - ./app:/go/app # ホストのディレクトリ:コンテナのディレクトリ
+    #env_file:
+    #  - ./.go_env
+    ports:
+      - "5002:8000" # ホストのポート:コンテナのポート

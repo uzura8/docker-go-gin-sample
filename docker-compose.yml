@@ -8,8 +8,10 @@ services:
       dockerfile: ./infra/app/Dockerfile # Dockerfile のあるディレクトリを相対パスで指定
     tty: true # コンテナが落ちないようにする
     volumes:
-      - ./app:/go/app # ホストのディレクトリ:コンテナのディレクトリ
+      - ./app:/app # ホストのディレクトリ:コンテナのディレクトリ
+    #environment:
+    #- HOGE=hoge
     #env_file:
-    #  - ./.go_env
+    #  - ./.env
     ports:
-      - "5002:8000" # ホストのポート:コンテナのポート
+      - "5003:8000" # ホストのポート:コンテナのポート

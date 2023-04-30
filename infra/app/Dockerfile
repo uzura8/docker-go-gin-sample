@@ -1,19 +1,18 @@
 FROM golang:1.20.3-alpine
 
-# Make directory and move to directory
-WORKDIR /go/app
+# Set the working directory and move
+WORKDIR /app
 
-#COPY app/go.mod .
-#COPY app/go.sum .
-COPY app/* ./
+# Set the GO111MODULE environment variable
+ENV GO111MODULE=on
 
-# Update and install git
-#RUN apt-get update && apt-get install -y git
+# Copy go.mod and the app directory
+COPY app/ ./
 
-#RUN go mod download
-RUN go get -u github.com/cosmtrek/air && \
+# Download dependencies and build the air tool
+RUN go mod download && \
+    go get -u github.com/cosmtrek/air && \
     go build -o /go/bin/air github.com/cosmtrek/air
 
+# Run the application using air
 CMD ["air", "-c", ".air.toml"]
-#CMD go run main.go
-#CMD ["go", "run", "main.go"]

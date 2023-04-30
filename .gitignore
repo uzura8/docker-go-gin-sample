@@ -56,3 +56,6 @@ go.sum
 go.mod
 Gopkg.toml
 Gopkg.lock
+
+# config
+.env

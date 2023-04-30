@@ -12,6 +12,11 @@ You need below
 
 * Docker >= v20.10.X
 
+```bash
+go mod init gin-sample
+go get github.com/gin-gonic/gin
+```
+
 ## Start Http
 
 ```bash
